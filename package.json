@@ -1,5 +1,5 @@
 {
-  "name": "friend_finder",
+  "name": "friend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/cullanrocks/Friend-Finder/issues"
   },
-  "homepage": "https://github.com/cullanrocks/Friend-Finder#readme"
+  "homepage": "https://github.com/cullanrocks/Friend-Finder#readme",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "fs": "0.0.1-security",
+    "http": "0.0.0",
+    "path": "^0.12.7"
+  }
 }
