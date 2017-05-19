@@ -23,8 +23,8 @@
                 <div class="mdl-layout-spacer"></div>
                 <!-- Navigation -->
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Home</a>
-                    <a class="mdl-navigation__link" href=""=>About</a>
+                    <a class="mdl-navigation__link" href="/">Home</a>
+                    <a class="mdl-navigation__link" href="/survey"=>Survey</a>
                 </nav>
             </div>
         </header>
@@ -32,8 +32,8 @@
         <div class="mdl-layout__drawer">
             <span class="mdl-layout-title">Friend Finder</span>
             <nav class="mdl-navigation">
-                <a class="mdl-navigation__link" href="">Home</a>
-                <a class="mdl-navigation__link" href="">About</a>
+                <a class="mdl-navigation__link" href="/">Home</a>
+                <a class="mdl-navigation__link" href="/survey">Survey</a>
             </nav>
         </div>
         <main class="mdl-layout__content ">
@@ -41,6 +41,7 @@
                 <div class="mdl-cell mdl-cell--10-col mdl-cell--10-col-tablet mdl-cell--4-phone header-div">
                   
                     <h3>Take Our Survery To Find Some Friends:</h3>
+                    <br>
                     <br>
                     <div class="example-buttons">
                         <label class="mdl-radio mdl-js-radio" for="option3">
@@ -72,6 +73,7 @@
                         <div class="q-container">
                         </div>
                         <div class="result-container">
+                        <a href="/survey"><button class ='mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect' id='survey-start-btn'> Start Survey </button></a>
                         </div>
                     </div>
                 </div>
@@ -79,7 +81,8 @@
         </main>
     </div>
 </body>
-<script src="../data/friends.js" type="text/javascript">
-</script>
+<!-- <script src="../data/friends.js" type="text/javascript">
+</script> -->
+<script src="../routing.htmlRoutes.js" type="text/javascript"></script>
 
 </html>

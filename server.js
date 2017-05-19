@@ -1,10 +1,15 @@
 // DEPENDENCIES -------------------------------------
 var express = require('express');
+var app = express();
 var http = require('http');
 var fs = require('fs');
 var bodyParser = require('body-parser');
 var path = require('path');
-var app = express();
+
+var getFriends = require("./app/routing/apiRoutes.js");
+var postNew = require("./app/routing/apiRoutes.js");
+
+
 var PORT = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
@@ -12,6 +17,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 app.use(express.static('app/'));
+app.use(express.static('app/public/'));
 // SAMPLE USERS -------------------------------------
 var matcheesArray = [{
     name: "Mila",
@@ -44,7 +50,11 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "app/public/home.html"));
 })
 
-app.get("/api/:matcheesArray?", function(req, res) {
+app.get("/survey", function(req, res) {
+    res.sendFile(path.join(__dirname, "app/public/survey.html"));
+})
+
+app.get("/api/friends", function(req, res) {
     var chosen = req.params.matcheesArray;
     if (chosen) {
         console.log(chosen);
@@ -59,14 +69,12 @@ app.get("/api/:matcheesArray?", function(req, res) {
 })
 
 
-app.post("/api/new", function(req, res) {
+app.post("/api/friends", function(req, res) {
     usersMatchesArray = [];
     var request = req.body;
-    // console.log(request);
     var userInputs = Object.keys(request).map(function(key) {
         return (parseInt(request[key]));
     })
-    // console.log(userInputs)
 
     for (var j = 0; j < matcheesArray.length; j++) {
         var scoreDifferenceArray = [];

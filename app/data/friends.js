@@ -35,7 +35,7 @@ $(document).ready(function() {
         // lowestScore = 0;
         // console.log(formResults)
         // -------------------------------     PUSHING THE DATA TO THE API       ---------------------------------
-        $.post("/api/new", formResults)
+        $.post("/api/friends", formResults)
             .done(function(matchees) {
                 // -------------------------------     CREATING AN ARRAY OF COMPATIBILITY SCORES       -------------------
 
