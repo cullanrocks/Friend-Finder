@@ -11,7 +11,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.text());
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
-app.use(express.static('app/public'));
+app.use(express.static('app/'));
 // SAMPLE USERS -------------------------------------
 var matcheesArray = [{
     name: "Mila",
@@ -41,7 +41,7 @@ var userScore = 0;
 var matchCompatibilityScore = 0;
 
 app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "/public/home.html"));
+    res.sendFile(path.join(__dirname, "app/public/home.html"));
 })
 
 app.get("/api/:matcheesArray?", function(req, res) {
